@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Events in your city</title>
+	<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+	<header class="header">
+		<h3 class="header-text">Система управления мероприятиями</h3>
+	</header>
+	<main class="main">
+		<div class="impression-items">
+			<% events.forEach(event => { %>
+				<div class="impression-card">
+					<div class="impression-card-image">
+						<a href="<%= event.src %>" target="_blank">
+							<img src="<%= event.img %>" alt="<%= event.title %>">
+						</a>
+					</div>
+					<a class="impression-card-title" href="<%= event.src%>" target="_blank"> <%= event.title%> </a>
+          <div class="impression-card-info"> <%= event.info%> </div>
+				</div>
+				<% }); %>
+		</div>
+	</main>
+</body>
+</html>
